@@ -1,0 +1,149 @@
+@import url(https://fonts.googleapis.com/css2?family=Oswald&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap);
+
+.App {
+  background-color: #100f17;
+  margin: 0;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+}
+
+body {
+  min-width: 600px;
+}
+
+.hidden {
+  display: none;
+}
+
+.NavMenu {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  background-color: #100f17;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: rgba(255,255,255,.7);
+  text-shadow: 0 0 5px rgba(255,255,255,.8), 0 0 6px rgba(255,255,255,.7);
+}
+
+.NavMenu nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-self: center;
+  align-items: center;
+}
+
+.AboutMe {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.AboutMe .bg {
+  position: relative;
+  height: 439px;
+  width: 1000px;
+  background: center no-repeat url("./assets/images/bg-dark.PNG");
+}
+
+
+.AboutMe .sprite {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.AboutMe .sides {
+  flex: 1;
+  min-height: 439px;
+  min-width: 100px;
+  background: url("./assets/images/curtains.png");
+  z-index: 3;
+}
+
+.AboutMe .bg.light {
+  background: center no-repeat url("./assets/images/bg-light.PNG");
+}
+
+.AboutMe .stay-button {
+  position: absolute;
+  left: 50%;
+  top: 408px;
+  transform: translate(-50%);
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.AboutMe .left-button, .AboutMe .right-button {
+  width: 32px;
+  height: 38px;
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  transform: translate(0%, -50%);
+  cursor: pointer;
+  background-image: url("./assets/images/arrow.png");
+}
+
+.AboutMe .right-button {
+  left: auto;
+  right: 8px;
+  transform:scaleX(-1) translate(0%, -50%);
+}
+
+.Dialog .content-wrap {
+  max-width: 1300px;
+  margin: auto;
+  border: 46px solid;
+  border-image: url("./assets/images/dialogue-box-empty.svg");
+  border-image-slice: 16;
+  display: flex;
+}
+
+.Dialog img {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  max-width:100%;
+  max-height: 300px;
+}
+
+.Dialog .image-wrap {
+  flex: 1;
+  min-width: 140px;
+}
+
+.Dialog .text {
+  flex: 3;
+  padding-top: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-width: 320px;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+}
+
+@keyframes curtains {
+  from {min-width: 100px;}
+  to {min-width: 50%;}
+}
+
+.curtains {
+  animation-name: curtains;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes stage {
+  from {min-width: 1000px;}
+  to {min-width: 0px;}
+}
