@@ -21,7 +21,7 @@ class AboutMe extends Component {
 
       <div className={`sides ${this.props.storyMode ? 'curtains' : ''}`} onClick={this.props.lightenUp}></div>
         <div className={classnames('bg', this.props.isLighten ? classes.join(' ') : '')}>
-          <div className="sprite">
+          <div className="sprite" onClick={this.props.handleSpriteClick}>
             {sprite}
           </div>
           <div className={`stay-button ${this.props.storyMode || !this.props.isLighten ? 'hidden' : ''}`} onClick={this.props.handleStay}>stay</div>

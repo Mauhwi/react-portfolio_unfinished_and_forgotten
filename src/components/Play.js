@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import AboutMe from "./AboutMe";
 import Dialog from "./Dialog";
 import Story from "./Story";
+import textData from "../data/dialog-text.json";
 
 class Play extends Component {
   constructor(props) {
@@ -10,6 +11,8 @@ class Play extends Component {
       count: 0,
       isLighten: false,
       storyMode: false,
+      currentText: 1,
+      dialogText: textData
     };
   }
 
@@ -26,15 +29,18 @@ class Play extends Component {
     
   }
 
+  handleSpriteClick() {
+    if (this.state.currentText < this.state.dialogText.length) {
+      this.setState((state) => ({
+        currentText: this.state.currentText+1,
+      }));
+    }
+  }
+
   render() {
     // let scene;
     // if (!this.state.storyMode) {
-    //   scene = <AboutMe
-    //   isLighten={this.state.isLighten}
-    //   lightenUp={this.lightenUp.bind(this)}
-    //   storyMode={this.state.storyMode}
-    //   handleStay={this.handleStay.bind(this)}
-    //   />
+    //   scene = <AboutMe />
     // } else {
     //   scene = <Story />
     // }
@@ -45,11 +51,14 @@ class Play extends Component {
       lightenUp={this.lightenUp.bind(this)}
       storyMode={this.state.storyMode}
       handleStay={this.handleStay.bind(this)}
+      handleSpriteClick={this.handleSpriteClick.bind(this)}
       />
         {/* {scene} */}
         <Dialog
           isLighten={this.state.isLighten}
           lightenUp={this.lightenUp.bind(this)}
+          textId={this.state.currentText}
+          text={this.state.dialogText}
         />
       </div>
     );

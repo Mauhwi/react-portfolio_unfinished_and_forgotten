@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "engText": "Hello, my name is Darya and I'm a junior web developer looking for a front-end internship",
+    "ruText": "Привет, меня зовут Дарья и я начинающий веб-разработчик"
+  },
+  {
+    "id": 2,
+    "engText": "To the left you can learn about my education and how to contact me",
+    "ruText": "О моем образовании, навыках  и контактной информации можно узнать слева"
+  },
+  {
+    "id": 3,
+    "engText": "To the right is some information about my projects and a link to my github",
+    "ruText": "Немного о моих проектах и профиль Github справа"
+  },
+  {
+    "id": 4,
+    "engText": "Or you can stay here and I'll talk about myself a bit",
+    "ruText": "Можно так же остаться здесь, тогда я просто немного про себя расскажу"
+  },
+  {
+    "id": 5,
+    "engText": "You can also use the navigation menu anytime",
+    "ruText": "Любая страница также доступна в навигационном меню"
+  }
+]
