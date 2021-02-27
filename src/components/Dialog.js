@@ -6,21 +6,45 @@ export class Dialog extends Component {
     this.state = {
       stringArray: [],
     };
+    this.textProvider = this.textProvider.bind(this)
+  }
+
+  textProvider(element, index, last) {
+    document.querySelector(".text").innerHTML += element;
+    if (index == last) {
+      console.log(index);
+      this.props.animationLock();
+    }
   }
 
   stringAnimation() {
     document.querySelector(".text").innerHTML = "";
+    let last = this.state.stringArray.length - 1;
     this.state.stringArray.forEach((element, index) => {
-      setTimeout(function name(params) {
-        document.querySelector(".text").innerHTML += element;
-      }, 50 * (index + 1));
+      setTimeout(this.textProvider, 32 * (index + 1), element, index, last);
     });
   }
+
+  shouldComponentUpdate(nextProps) {
+    return (this.props.textId !== nextProps.textId || this.props.isLighten !== nextProps.isLighten);
+  }
+
+  // stringAnimation() {
+  //   document.querySelector(".text").innerHTML = "";
+  //   let last = this.state.stringArray.length - 1;
+  //   this.state.stringArray.forEach((element, index) => {
+  //     setTimeout(function() {
+  //       document.querySelector(".text").innerHTML += element;
+  //       if (index == last) {
+  //         console.log(index)
+  //       }
+  //     }, 50 * (index + 1));
+  //   });
+  // }
 
   render() {
     let avatar;
     let text;
-    let stringArray = [];
 
     if (!this.props.isLighten) {
       avatar = <img src="avatar-dark.png" alt="background"></img>;

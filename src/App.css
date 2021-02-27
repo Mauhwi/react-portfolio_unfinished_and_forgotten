@@ -51,13 +51,18 @@ body {
   background: center no-repeat url("./assets/images/bg-dark.PNG");
 }
 
-
 .AboutMe .sprite {
   position: absolute;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  cursor: pointer;
+}
+
+.AboutMe .disabled {
+  cursor: default;
+  pointer-events: none;
 }
 
 .AboutMe .sides {

@@ -12,7 +12,8 @@ class Play extends Component {
       isLighten: false,
       storyMode: false,
       currentText: 1,
-      dialogText: textData
+      dialogText: textData,
+      animationRunning: true
     };
   }
 
@@ -35,6 +36,14 @@ class Play extends Component {
         currentText: this.state.currentText+1,
       }));
     }
+    this.animationLock();
+  }
+
+  animationLock() {
+    console.log(this.state.animationRunning)
+    this.setState((state) => ({
+      animationRunning: !this.state.animationRunning,
+    }));
   }
 
   render() {
@@ -51,6 +60,7 @@ class Play extends Component {
       lightenUp={this.lightenUp.bind(this)}
       storyMode={this.state.storyMode}
       handleStay={this.handleStay.bind(this)}
+      animationRunning={this.state.animationRunning}
       handleSpriteClick={this.handleSpriteClick.bind(this)}
       />
         {/* {scene} */}
@@ -59,6 +69,7 @@ class Play extends Component {
           lightenUp={this.lightenUp.bind(this)}
           textId={this.state.currentText}
           text={this.state.dialogText}
+          animationLock={this.animationLock.bind(this)}
         />
       </div>
     );

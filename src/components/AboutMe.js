@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import classnames from 'classnames';
 
 class AboutMe extends Component {
 
@@ -19,9 +18,9 @@ class AboutMe extends Component {
     return (
       <div className="AboutMe">
 
-      <div className={`sides ${this.props.storyMode ? 'curtains' : ''}`} onClick={this.props.lightenUp}></div>
-        <div className={classnames('bg', this.props.isLighten ? classes.join(' ') : '')}>
-          <div className="sprite" onClick={this.props.handleSpriteClick}>
+      <div className={`sides ${this.props.storyMode ? 'curtains' : ''} ${this.props.isLighten ? 'disabled' : ''}`}  onClick={this.props.lightenUp}></div>
+        <div className={`bg ${this.props.isLighten ? 'light' : ''}`}>
+          <div className={`sprite ${this.props.animationRunning ? 'disabled' : ''}`} onClick={this.props.handleSpriteClick}>
             {sprite}
           </div>
           <div className={`stay-button ${this.props.storyMode || !this.props.isLighten ? 'hidden' : ''}`} onClick={this.props.handleStay}>stay</div>
