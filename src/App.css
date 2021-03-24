@@ -36,11 +36,13 @@ body {
   align-items: center;
 }
 
-.AboutMe {
+.AboutMe, .Story {
   padding: 0;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 300px;
   margin-bottom: 20px;
 }
 
@@ -65,7 +67,14 @@ body {
   pointer-events: none;
 }
 
-.AboutMe .sides {
+.stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sides {
+  align-self: flex-start;
   flex: 1;
   min-height: 439px;
   min-width: 100px;
@@ -138,17 +147,52 @@ body {
 }
 
 @keyframes curtains {
-  from {min-width: 100px;}
-  to {min-width: 50%;}
+  0% {min-width: 100px;}
+  30% {min-width: 50%;}
+  70% {min-width: 50%;}
+  100% {min-width: 100px;}
 }
 
 .curtains {
   animation-name: curtains;
-  animation-duration: 2s;
+  animation-duration: 4s;
   animation-fill-mode: forwards;
 }
 
+.closed {
+  min-width: 0px;
+} 
+
 @keyframes stage {
-  from {min-width: 1000px;}
-  to {min-width: 0px;}
+  0% {min-width: 300px;}
+  50% {min-width: 0px;}
+  100% {min-width: 300px;}
 }
+
+.Story {
+  min-width: 0px; 
+}
+
+.Story .bg {
+  position: relative;
+  height: 439px;
+  width: 1000px;
+  background: center no-repeat url("./assets/images/bg-forest.png");
+}
+
+.Story .bg {
+  position: relative;
+  height: 439px;
+  width: 1000px;
+  background: bottom no-repeat url("./assets/images/bg-forest.png");
+}
+
+.Story .sprite {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  cursor: pointer;
+}
+

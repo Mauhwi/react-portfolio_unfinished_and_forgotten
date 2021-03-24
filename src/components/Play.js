@@ -11,10 +11,12 @@ class Play extends Component {
       count: 0,
       isLighten: false,
       storyMode: false,
+      isLoading: false,
       currentText: 1,
       dialogText: textData,
       animationRunning: true
     };
+    this.setStoryMode = this.setStoryMode.bind(this);
   }
 
   lightenUp() {
@@ -23,11 +25,18 @@ class Play extends Component {
     }));
   }
 
+  setStoryMode() {
+    this.setState((state) => ({
+      storyMode: !state.storyMode,
+    }));
+  }
+
   handleStay() {
     this.setState((state) => ({
-      storyMode: true,
+      isLoading: true,
     }));
-    
+
+    setTimeout(this.setStoryMode, 2000); 
   }
 
   handleSpriteClick() {
@@ -40,30 +49,31 @@ class Play extends Component {
   }
 
   animationLock() {
-    console.log(this.state.animationRunning)
     this.setState((state) => ({
       animationRunning: !this.state.animationRunning,
     }));
   }
 
   render() {
-    // let scene;
-    // if (!this.state.storyMode) {
-    //   scene = <AboutMe />
-    // } else {
-    //   scene = <Story />
-    // }
+    let scene;
+    if (!this.state.storyMode) {
+      scene = <AboutMe 
+        isLighten={this.state.isLighten}
+        lightenUp={this.lightenUp.bind(this)}
+        isLoading={this.state.isLoading}
+        handleStay={this.handleStay.bind(this)}
+        animationRunning={this.state.animationRunning}
+        handleSpriteClick={this.handleSpriteClick.bind(this)}/>
+    } else {
+        scene = <Story />
+    }
     return (
       <div>
-        <AboutMe
-      isLighten={this.state.isLighten}
-      lightenUp={this.lightenUp.bind(this)}
-      storyMode={this.state.storyMode}
-      handleStay={this.handleStay.bind(this)}
-      animationRunning={this.state.animationRunning}
-      handleSpriteClick={this.handleSpriteClick.bind(this)}
-      />
-        {/* {scene} */}
+        <div className="stage">
+          <div className={`sides ${this.state.isLoading ? 'curtains' : ''} ${this.state.isLighten ? 'disabled' : ''}`}  onClick={this.lightenUp.bind(this)}></div>
+          {scene}
+          <div className={`sides ${this.state.isLoading ? 'curtains' : ''}`}></div>
+        </div>
         <Dialog
           isLighten={this.state.isLighten}
           lightenUp={this.lightenUp.bind(this)}

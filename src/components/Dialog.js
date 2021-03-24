@@ -12,7 +12,6 @@ export class Dialog extends Component {
   textProvider(element, index, last) {
     document.querySelector(".text").innerHTML += element;
     if (index == last) {
-      console.log(index);
       this.props.animationLock();
     }
   }
@@ -21,7 +20,7 @@ export class Dialog extends Component {
     document.querySelector(".text").innerHTML = "";
     let last = this.state.stringArray.length - 1;
     this.state.stringArray.forEach((element, index) => {
-      setTimeout(this.textProvider, 32 * (index + 1), element, index, last);
+      setTimeout(this.textProvider, 26 * (index + 1), element, index, last);
     });
   }
 
