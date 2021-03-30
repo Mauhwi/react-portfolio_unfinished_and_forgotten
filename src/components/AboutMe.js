@@ -22,9 +22,9 @@ class AboutMe extends Component {
           <div className={`sprite ${this.props.animationRunning ? 'disabled' : ''}`} onClick={this.props.handleSpriteClick}>
             {sprite}
           </div>
-          <div className={`stay-button ${this.props.isLoading || !this.props.isLighten ? 'hidden' : ''}`} onClick={this.props.handleStay}>stay</div>
-          <div className={`left-button ${this.props.isLoading || !this.props.isLighten ? 'hidden' : ''}`}></div>
-          <div className={`right-button ${this.props.isLoading || !this.props.isLighten ? 'hidden' : ''}`}></div>
+          <div className={`stay-button ${this.props.isLoading || !this.props.isLighten ? 'hidden' : ''} ${this.props.animationRunning ? 'disabled' : ''}`} onClick={this.props.handleStay}>stay</div>
+          <div className={`left-button ${this.props.isLoading || !this.props.isLighten ? 'hidden' : ''} ${this.props.animationRunning ? 'disabled' : ''}`}></div>
+          <div className={`right-button ${this.props.isLoading || !this.props.isLighten ? 'hidden' : ''} ${this.props.animationRunning ? 'disabled' : ''}`}></div>
         </div>
 
       </div>

@@ -1,0 +1,28 @@
+[
+    {
+      "id": 1,
+      "engText": "First of all, thank you for visiting my site!",
+      "ruText": "В первую очередь, спасибо, что посетили мой сайт!"
+    },
+    {
+      "id": 2,
+      "engText": "My name as Darya. I graduated South Ural State Univercity in 2020 with a bachelor's degree in Computer Science",
+      "ruText": "Меня зовут Дарья. Я окончила Южно-Уральский Государственный Университет в 2020 году по направлению Информатика и Вычислительная Техника с дипломом бакалавра."
+    },
+    {
+      "id": 3,
+      "engText": "I mostly used Java for my training projects and homework, but after graduation, considering a lockdown in progress, I decided to try and dive deeper into some front-end technologies.",
+      "ruText": "..."
+    },
+    {
+      "id": 4,
+      "engText": "The last project I started before the graduation one involved Java, Spring, Thymeleaf and MySQL, and was a collection of builds I wanted to do for my characters in one videogame.",
+      "ruText": "..."
+    },
+    {
+      "id": 5,
+      "engText": "It was the first of my personal projects to be a web application. I liked making it and seeing it work a lot, so that's where the decision to dive into it came from",
+      "ruText": "..."
+    }
+  ]
+  

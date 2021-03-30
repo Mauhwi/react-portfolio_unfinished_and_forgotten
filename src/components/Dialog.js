@@ -25,7 +25,8 @@ export class Dialog extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return (this.props.textId !== nextProps.textId || this.props.isLighten !== nextProps.isLighten);
+    return (this.props.textId !== nextProps.textId || this.props.isLighten !== nextProps.isLighten 
+      || this.props.storyMode !== nextProps.storyMode);
   }
 
   // stringAnimation() {
@@ -48,14 +49,22 @@ export class Dialog extends Component {
     if (!this.props.isLighten) {
       avatar = <img src="avatar-dark.png" alt="background"></img>;
       text = "...";
-    } else {
-      avatar = <img src="avatar-dark-bg.png" alt="background"></img>;
+    } else if (!this.props.storyMode) {
+      avatar = <img src="avatar-dark-bg.png" alt="avatar"></img>;
       text = this.props.text
         .filter((textLine) => textLine.id == this.props.textId)
         .map((textLine) => textLine.engText)
         .toString();
       this.state.stringArray = text.split("");
       this.stringAnimation();
+    } else if (this.props.storyMode) {
+      avatar = <img src="avatar-story.png" alt="avatar"></img>;
+      text = this.props.storyText
+        .filter((textLine) => textLine.id == this.props.textId)
+        .map((textLine) => textLine.engText)
+        .toString();
+      this.state.stringArray = text.split("");
+      setTimeout(this.stringAnimation(), 2000)
     }
 
     return (

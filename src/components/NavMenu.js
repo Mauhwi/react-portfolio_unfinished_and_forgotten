@@ -5,10 +5,10 @@ export class NavMenu extends Component {
         return (
             <div className="NavMenu">
                 <nav>
-                    <a>Главная</a>
-                    <a>Рассказ</a>
-                    <a>Портфолио</a>
-                    <a>Контакты</a>
+                    <a>Home</a>
+                    <a>Story</a>
+                    <a>Portfolio</a>
+                    <a>Contacts</a>
                 </nav>
             </div>
         )

@@ -13,7 +13,7 @@ export class Story extends Component {
     return (
       <div className="Story">
         <div className="bg">
-          <div className="sprite"><img src={sprite} alt="sprite"></img></div>
+          <div className={`sprite ${this.props.animationRunning ? 'disabled' : ''}`} onClick={this.props.handleStorySpriteClick}></div>
         </div>
       </div>
     );

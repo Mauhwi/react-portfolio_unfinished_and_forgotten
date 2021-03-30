@@ -62,7 +62,7 @@ body {
   cursor: pointer;
 }
 
-.AboutMe .disabled {
+.AboutMe .disabled, .Story .disabled {
   cursor: default;
   pointer-events: none;
 }
@@ -143,6 +143,7 @@ body {
   padding-right: 10px;
   min-width: 320px;
   font-family: 'Press Start 2P', cursive;
+  line-height: 120%;
   color: white;
 }
 
@@ -177,22 +178,27 @@ body {
   position: relative;
   height: 439px;
   width: 1000px;
-  background: center no-repeat url("./assets/images/bg-forest.png");
-}
-
-.Story .bg {
-  position: relative;
-  height: 439px;
-  width: 1000px;
   background: bottom no-repeat url("./assets/images/bg-forest.png");
 }
 
 .Story .sprite {
   position: absolute;
+  width: 400px;
+  height: 309px;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
   cursor: pointer;
+  background: bottom no-repeat url("./assets/images/campfire1.png");
+  animation: campfireSprite 0.7s linear infinite;
 }
+
+@keyframes campfireSprite {
+  0% {background: bottom no-repeat url("./assets/images/campfire1.png");}
+  25% {background: bottom no-repeat url("./assets/images/campfire2.png");}
+  50% {background: bottom no-repeat url("./assets/images/campfire3.png");}
+  75% {background: bottom no-repeat url("./assets/images/campfire4.png");}
+}
+
 
