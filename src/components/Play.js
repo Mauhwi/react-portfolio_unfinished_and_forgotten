@@ -19,6 +19,8 @@ class Play extends Component {
       storyText: storyTextData
     };
     this.setStoryMode = this.setStoryMode.bind(this);
+    this.counterReset = this.counterReset.bind(this);
+    this.loadingToggle = this.loadingToggle.bind(this);
   }
 
   lightenUp() {
@@ -29,7 +31,22 @@ class Play extends Component {
 
   setStoryMode() {
     this.setState((state) => ({
+      currentText: 1,
+    }));
+    this.setState((state) => ({
       storyMode: !state.storyMode,
+    }));
+  }
+
+  counterReset() {
+    this.setState((state) => ({
+      currentText: 1,
+    }));
+  }
+
+  loadingToggle() {
+    this.setState((state) => ({
+      isLoading: !state.isLoading,
     }));
   }
 
@@ -38,10 +55,11 @@ class Play extends Component {
       isLoading: true,
     }));
     this.setState((state) => ({
-      currentText: 1,
+      animationRunning: true,
     }));
 
-    setTimeout(this.setStoryMode, 2000); 
+    setTimeout(this.setStoryMode, 2000);
+    setTimeout(this.loadingToggle, 4000) 
   }
 
   handleSpriteClick() {
@@ -99,6 +117,7 @@ class Play extends Component {
           text={this.state.dialogText}
           storyText={this.state.storyText}
           animationLock={this.animationLock.bind(this)}
+          counterReset={this.counterReset.bind(this)}
         />
       </div>
     );
