@@ -14,6 +14,8 @@ export class Story extends Component {
       <div className="Story">
         <div className="bg">
           <div className={`sprite ${this.props.animationRunning ? 'disabled' : ''}`} onClick={this.props.handleStorySpriteClick}></div>
+          <div className="diploma-sprite"></div>
+          <div className="cat-sprite"></div>
         </div>
       </div>
     );

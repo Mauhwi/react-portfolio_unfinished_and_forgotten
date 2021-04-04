@@ -6,7 +6,7 @@
     },
     {
       "id": 2,
-      "engText": "My name as Darya. I graduated South Ural State Univercity in 2020 with a bachelor's degree in Computer Science",
+      "engText": "My name is Darya. I graduated South Ural State Univercity in 2020 with a bachelor's degree in Computer Science",
       "ruText": "Меня зовут Дарья. Я окончила Южно-Уральский Государственный Университет в 2020 году по направлению Информатика и Вычислительная Техника с дипломом бакалавра."
     },
     {
@@ -16,7 +16,7 @@
     },
     {
       "id": 4,
-      "engText": "The last project I started before the graduation one involved Java, Spring, Thymeleaf and MySQL, and was a collection of builds I wanted to do for my characters in one videogame.",
+      "engText": "The last project I started before the graduation one also involved Spring and Thymeleaf and was a collection of builds I wanted to do for my characters in one videogame.",
       "ruText": "..."
     },
     {

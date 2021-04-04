@@ -10,7 +10,7 @@
 }
 
 body {
-  min-width: 600px;
+  min-width: 860px;
 }
 
 .hidden {
@@ -114,6 +114,10 @@ body {
   transform:scaleX(-1) translate(0%, -50%);
 }
 
+.Dialog {
+  margin-top: 12px;
+}
+
 .Dialog .content-wrap {
   max-width: 1300px;
   margin: auto;
@@ -171,7 +175,9 @@ body {
 }
 
 .Story {
+  margin: 0;
   min-width: 0px; 
+  overflow: hidden;
 }
 
 .Story .bg {
@@ -194,11 +200,43 @@ body {
   animation: campfireSprite 0.7s linear infinite;
 }
 
+.Story .diploma-sprite {
+  position: absolute;
+  width: 41px;
+  height: 60px;
+  top: 91%;
+  left: 82%;
+  transform: skew(16deg, -4deg) translate(-50%, -50%);
+  z-index: 2;
+  cursor: pointer;
+  background: center / contain no-repeat url("./assets/images/diploma.png");
+}
+
+.Story .cat-sprite {
+  position: absolute;
+  width: 98px;
+  height: 116px;
+  top: 94%;
+  left: 15%;
+  transform: translate(-50%, -50%) rotateZ(25deg);
+  z-index: 2;
+  cursor: pointer;
+  background: center / contain no-repeat url("./assets/images/cat-sprite.png");
+  animation: catSprite 5s linear infinite;
+}
+
 @keyframes campfireSprite {
   0% {background: bottom no-repeat url("./assets/images/campfire1.png");}
   25% {background: bottom no-repeat url("./assets/images/campfire2.png");}
   50% {background: bottom no-repeat url("./assets/images/campfire3.png");}
   75% {background: bottom no-repeat url("./assets/images/campfire4.png");}
+}
+
+@keyframes catSprite {
+  0% {top: 120%;}
+  50% {top: 94%;}
+  85% {top: 94%;}
+  100% {top: 120%;}
 }
 
 
