@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Oswald&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Caveat&display=swap);
 
 .App {
   background-color: #100f17;
@@ -43,12 +44,11 @@ body {
   align-items: center;
   justify-content: center;
   min-width: 300px;
-  margin-bottom: 20px;
 }
 
 .AboutMe .bg {
   position: relative;
-  height: 439px;
+  height: 459px;
   width: 1000px;
   background: center no-repeat url("./assets/images/bg-dark.PNG");
 }
@@ -76,7 +76,7 @@ body {
 .sides {
   align-self: flex-start;
   flex: 1;
-  min-height: 439px;
+  min-height: 459px;
   min-width: 100px;
   background: url("./assets/images/curtains.png");
   z-index: 3;
@@ -184,7 +184,7 @@ body {
   position: relative;
   height: 439px;
   width: 1000px;
-  background: bottom no-repeat url("./assets/images/bg-forest.png");
+  background: bottom no-repeat url("./assets/images/bg-story.png");
 }
 
 .Story .sprite {
@@ -200,13 +200,20 @@ body {
   animation: campfireSprite 0.7s linear infinite;
 }
 
+@keyframes campfireSprite {
+  0% {background: bottom no-repeat url("./assets/images/campfire1.png");}
+  25% {background: bottom no-repeat url("./assets/images/campfire2.png");}
+  50% {background: bottom no-repeat url("./assets/images/campfire3.png");}
+  75% {background: bottom no-repeat url("./assets/images/campfire4.png");}
+}
+
 .Story .diploma-sprite {
   position: absolute;
   width: 41px;
   height: 60px;
   top: 91%;
   left: 82%;
-  transform: skew(16deg, -4deg) translate(-50%, -50%);
+  transform: skew(12deg, -4deg) translate(-50%, -50%);
   z-index: 2;
   cursor: pointer;
   background: center / contain no-repeat url("./assets/images/diploma.png");
@@ -214,22 +221,15 @@ body {
 
 .Story .cat-sprite {
   position: absolute;
-  width: 98px;
-  height: 116px;
+  width: 100px;
+  height: 120px;
   top: 94%;
-  left: 15%;
+  left: 13%;
   transform: translate(-50%, -50%) rotateZ(25deg);
-  z-index: 2;
+  z-index: 3;
   cursor: pointer;
   background: center / contain no-repeat url("./assets/images/cat-sprite.png");
   animation: catSprite 5s linear infinite;
-}
-
-@keyframes campfireSprite {
-  0% {background: bottom no-repeat url("./assets/images/campfire1.png");}
-  25% {background: bottom no-repeat url("./assets/images/campfire2.png");}
-  50% {background: bottom no-repeat url("./assets/images/campfire3.png");}
-  75% {background: bottom no-repeat url("./assets/images/campfire4.png");}
 }
 
 @keyframes catSprite {
@@ -240,3 +240,168 @@ body {
 }
 
 
+.Story .portfolio-wrap {
+  z-index: 2;
+  position: absolute;
+  width: 100px;
+  height: 72px;
+  top: 82%;
+  left: 25%;
+  display: flex;
+}
+
+.Story .portfolio-sprite {
+  align-self: center;
+  z-index: 3;
+  transform: skew(2deg, -2deg);
+  cursor: pointer;
+  width: 95px;
+  height: 68px;
+  background: center / contain no-repeat url("./assets/images/portfolio-sprite.png");
+  clip-path: polygon(0 30%, 24% 31%, 24% 13%, 42% 13%, 46% 0, 78% 0, 78% 15%, 100% 25%, 99% 99%, 0% 100%);
+}
+
+.portfolio-shine {
+  animation: portfolioShineAnimation 2s;
+}
+
+
+@keyframes portfolioShineAnimation {
+  0% {
+    filter: box-shadow(none);
+  }
+  50% { 
+    filter: drop-shadow(#f6df95b0 0 -2px 6px);
+  }
+  100% {
+    filter: box-shadow(none);
+  }
+}
+
+.diplomaModal {
+  min-width: 860px;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  margin: auto;
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 6;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+}
+
+.diplomaModal-content {
+  display: flex;
+  flex-direction: column;
+  border: 40px solid;
+  border-image: url("./assets/images/diploma-frame.svg");
+  border-image-slice: 1 4;
+  background-color: #d9e2ec;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 80%;
+  max-width: 1000px;
+  font-family: 'Caveat', cursive;
+  font-size: 1.8rem;
+  position: relative;
+}
+
+.diplomaModal.open {
+  display: block;
+}
+.diplomaModal.closed {
+  display: none;
+}
+
+.diplomaModal-content p {
+  margin: 0;
+  padding: 12px;
+}
+
+.diplomaModal-content h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.diplomaModal-content .screenshot-holder {
+  align-self: center;
+}
+
+.diplomaModal-content .screenshot-holder img {
+  padding: 12px;
+  align-self: center;
+}
+
+.diplomaModal-content .screenshot-holder video {
+  padding: 12px;
+  background-color: transparent;
+  border: none;
+}
+
+.diplomaModal-content .screenshot-holder.diagram img {
+  width: 100%;
+  max-width: 710px;
+  padding: 0;
+}
+
+.diplomaModal-content .img-desc {
+  padding: 0px;
+  padding-bottom: 12px;
+  font-size: 1.5rem;
+  color: rgb(55, 55, 56);
+  align-self: center;
+}
+
+.diplomaModal-content .close-bookmark {
+  position: absolute;
+  top: -40px;
+  left: 88%;
+  background-color: rgb(185, 43, 43);
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
+  line-height: 2rem;
+  color:whitesmoke;
+  cursor: pointer;
+  z-index: 7;
+}
+
+.diplomaModal-content .close-bookmark p {
+  padding: 0;
+}
+.diplomaModal-content .close-bookmark .bookmark-lower {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  margin-top: 8px;
+}
+.diplomaModal-content .close-bookmark .bookmark-left {
+  width: 0;
+  height: 0;
+  border-top: 20px solid rgb(185, 43, 43);
+  border-right: 20px solid transparent;
+  
+}
+.diplomaModal-content .close-bookmark .bookmark-right {
+  width: 0;
+  height: 0;
+  border-top: 20px solid rgb(185, 43, 43);
+  border-left: 20px solid transparent;
+}
+
+.diploma-shine {
+  animation: diplomaShineAnimation 2s;
+}
+
+@keyframes diplomaShineAnimation {
+  0% {box-shadow: none;}
+  50% { box-shadow: #2d4969bb 0 -1px 3px, #224164c0 0 -2px 8px, inset -1px 2px 2px 2px #224164e3, 2px 3px 12px 0px #224164}
+  100% {box-shadow: none;}
+}

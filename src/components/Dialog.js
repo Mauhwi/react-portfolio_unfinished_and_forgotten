@@ -64,7 +64,6 @@ export class Dialog extends Component {
       this.state.stringArray = text.split("");
       this.stringAnimation();
     }  else if (this.props.storyMode) {
-      // this.props.counterReset();
       avatar = <img src="avatar-story.png" alt="avatar"></img>;
       text = this.props.storyText
         .filter((textLine) => textLine.id == this.props.textId)

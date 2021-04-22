@@ -99,7 +99,8 @@ class Play extends Component {
     } else {
         scene = <Story 
         handleStorySpriteClick={this.handleStorySpriteClick.bind(this)}
-        animationRunning={this.state.animationRunning}/>
+        animationRunning={this.state.animationRunning}
+        isLoading={this.state.isLoading}/>
     }
     return (
       <div>

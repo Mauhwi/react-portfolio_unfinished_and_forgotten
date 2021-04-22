@@ -7,7 +7,6 @@ class AboutMe extends Component {
   }
 
   render() {
-    const classes = ['light'];
     let sprite;
     if (!this.props.isLighten) {
       sprite = <img src="Sprite-0001-dark1.png" alt="sprite"></img>;
